@@ -1,5 +1,6 @@
 # zeronote
-Ultra minimalist php flat-file notetaking app below 1kB
+Ultra minimalist php flat-file notetaking app below 1kB  
+<img src="zero1.png" width="400"><img src="zero2.png" width="400">
 
 This is a no-database note taking application, that is very simple. It just lets you to write a note with name and lists them on the main page.
 With the first note you write, the "n/" directory will be created and every note will be there in form of a text file. This gives you the ability
