@@ -1,5 +1,5 @@
 # zeronote
-Ultra minimalist php flat-file notetaking app that is 857 bytes in a single file.  
+Ultra minimalist php flat-file notetaking app that is 845 bytes in a single file.  
 <img src="zero1.png" width="400"><img src="zero2.png" width="400">
 
 This is a no-database note taking application, that is very simple. It just lets you to write a note with name and lists them on the main page.
