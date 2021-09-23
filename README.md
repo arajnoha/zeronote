@@ -1,6 +1,7 @@
 # zeronote
 Ultra minimalist php flat-file notetaking app that is 1.1kB in a single file.  
 <img src="zero.png">
+<img src="zero-detail.png">
 
 This is a no-database note taking application, that is very simple.
 
