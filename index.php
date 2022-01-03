@@ -1,3 +1,8 @@
+<?php session_start();
+if(isset($_POST["n"])){$n=$_POST["n"];$c=$_POST["c"];if(file_put_contents("n/".$n,$c)){header("Location: .");}}
+if(isset($_GET["d"])){$d=$_GET["d"];if(unlink($d)){header("Location: .");}}
+if(isset($_GET["o"])){$d=$_GET["o"];if(session_destroy()){header("Location: index.php");}}
+?>
 <!DOCTYPE html><html><head><meta charset="utf-8"><title>note</title><style>
 html,body{height:100%}
 body,a,textarea,form,input,summary{box-sizing:border-box;margin:0;padding:0}
@@ -13,19 +18,14 @@ textarea:focus,#name:focus{border:1px solid #2e3fa8}
 form>*:not(textarea){margin-right:18px}
 summary{list-style:none;cursor:pointer}
 </style></head><body>
-<?php 
-session_start();
-if(isset($_POST["l"]) && $_POST["l"]=="xxx"){$_SESSION["l"]="1";}
+<?php if(isset($_POST["l"]) && $_POST["l"]=="xxx"){$_SESSION["l"]="1";}
 if(isset($_SESSION["l"]) && $_SESSION["l"]=="1"){
-if(isset($_POST["n"])){$n=$_POST["n"];$c=$_POST["c"];if(file_put_contents("n/".$n,$c)){header("Location: /");}}
-if(isset($_GET["d"])){$d=$_GET["d"];if(unlink($d)){header("Location: /");}}
-if(isset($_GET["o"])){$d=$_GET["o"];if(session_destroy()){header("Location: /");}}
 if(isset($_POST["s"])){$s=$_POST["s"]."*";}else{$s="";}?>
-<?php if(isset($_GET["r"])){$r=$_GET["r"];$f=file_get_contents($r);?>
+<?php if(isset($_GET["r"])){$r=$_GET["r"];if($r!==""){$f=file_get_contents($r);}?>
 <form action="" method="post">
 <input type="text" id="n" name="n" value="<?=basename($r);?>">
 <input type="submit" value="Save" id="s">
-<a href="/">Exit</a>
+<a href=".">Exit</a>
 <?php if($r!==""){?><a href="?d=<?=$r;?>">Delete</a><?php }?>
 <textarea name="c"><?=$f;?></textarea>
 </form>
