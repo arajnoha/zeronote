@@ -21,3 +21,4 @@ to perform actions on your notes with whatever utilities you like.
 ### Install
 1. copy `index.php` on your server/web hosting
 2. change the password on line 18 (default is `x`)
+3. _(optional)_ add _.htaccess_ file in _n/_ directory with __deny from all__ to prevent anyone accessing your notes from direct URL guesses.
